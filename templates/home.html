@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>All Product</title>
+	</head>
+	<body>
+		<center>
+			<h1><center>Recipe</center></h1>
+			<!-- category -->
+			{% for cat in data %}
+			<div style="float:left; width: 25%; padding:20;">
+				<h3>{{ cat[0].category }}</h3>
+				<table>
+    				<!-- show each item -->
+    				{% for item in cat %}
+	                <tr>
+	                    <td><img src="{{ url_for('static', filename=item.name + '.jpg') }}" width=60 height=60></td>
+	                    <td>{{ item.name }}</td>
+	                </tr>
+	                {% endfor %}
+	                <!-- end show each item-->
+	            </table>
+			</div>
+			{% endfor %}
+			<!-- end catagory -->
+		</center>
+	</body>
+</html>
